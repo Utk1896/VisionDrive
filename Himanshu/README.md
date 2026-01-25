@@ -17,13 +17,6 @@ Tracking: Implemented object tracking to assign persistent IDs to cars, ensuring
 3. Threat Assessment Logic
 Instead of complex depth estimation models (which are slow), I used Bounding Box Area as a proxy for distance:
 
-Collision Warning: Box Area > 25,000 px (Immediate braking needed).
-Caution Warning: Box Area > 14,000 px (Vehicle is close).
-Safe: Area below threshold.
-Why This Approach?
-I prioritized Safety-First Engineering. I tuned the thresholds conservatively because in ADAS, a false caution is acceptable, but missing a collision is catastrophic. This logic achieved a low latency (approx. 11ms for braking logic) while maintaining robust detection on standard hardware.
-
 Files Included
-main.py: Core logic script.
-input_video.mp4: Raw dashcam footage.
+main.py: Core logic scripts.
 output_video.mp4: Processed output with bounding boxes and overlays.
